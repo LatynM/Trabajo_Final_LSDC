@@ -6,6 +6,8 @@ import java.util.List;
 public class Personaje {
     // Atributos
     private String nombre;
+    private String descripcion;
+    private String subtitulo;
     private Tipo tipo;
     private int costo;
     private List<Habilidad> listaHabilidades;
@@ -13,9 +15,11 @@ public class Personaje {
     
     // Constructor
     public Personaje(
-            String nombre, Tipo tipo, int costo,
-            List<Habilidad> listahabilidad, List<Item> listaItems) {
+            String nombre, String descripcion, String subtitulo, Tipo tipo,
+            int costo, List<Habilidad> listahabilidad, List<Item> listaItems) {
         this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.subtitulo = subtitulo;
         this.tipo = tipo;
         this.costo = costo;
         this.listaHabilidades = new ArrayList<>();
@@ -28,6 +32,20 @@ public class Personaje {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public String getDescripcion() {
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    public String getSubtitulo() {
+        return subtitulo;
+    }
+    public void setSubtitulo(String subtitulo) {
+        this.subtitulo = subtitulo;
     }
 
     public Tipo getTipo() {
