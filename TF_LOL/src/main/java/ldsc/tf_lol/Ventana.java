@@ -440,7 +440,7 @@ public class Ventana extends javax.swing.JFrame {
                           campeonSubtitulo.setText("Subtítulo");
                           campeonDesc.setText("(Descripción)");
                           campeonRC.setText("Clase - Región");
-                          campeonIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\squares\\champ.png"));
+                          campeonIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\squares\\Ashe.gif"));
                           claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\def.png"));
                       }
                   }
