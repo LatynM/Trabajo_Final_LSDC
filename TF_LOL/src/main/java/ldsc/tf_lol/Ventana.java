@@ -14,37 +14,47 @@ public class Ventana extends javax.swing.JFrame {
         LinkedList<Personaje> campeonesLista = new LinkedList<>();
         
         Personaje defaultPersonaje = new Personaje("(Elegir campeón)", " ", " ", 0, " ", " ");
+        defaultPersonaje.agregarHabilidad(0, new Habilidad(" ","P", 0));
+        defaultPersonaje.agregarHabilidad(1, new Habilidad(" ","P", 0));
+        defaultPersonaje.agregarHabilidad(2, new Habilidad(" ","P", 0));
+        defaultPersonaje.agregarHabilidad( 3, new Habilidad(" ","P", 0));
+        defaultPersonaje.agregarHabilidad(4, new Habilidad(" ","P", 0));
+     
         campeonesLista.add(defaultPersonaje);
+        
         
         Personaje c1 = new Personaje("Ashe", "Como Hija del Hielo y madre de guerra de la tribu Avarosa, Ashe comanda la más grande horda en el norte. Estoica, inteligente e idealista, pero incómoda con su rol de líder, ella aprovecha las magias ancestrales de su linaje para portar un arco de Hielo Puro. Apoyada por la creencia de su gente que ella es el héroe mitológico reencarnado de Avarosa, Ashe espera unificar el Fréljord una vez más al retomar sus tierras antiguas y tribales.", "La Arquera de Hielo", 450, "Tirador", "Freljord");
         Personaje c2 = new Personaje("Gwen", "Gwen, una antigua muñeca que se transformó y cobró vida a través de la magia, usa las mismas herramientas que en su momento la crearon. Lleva el peso del amor de su creadora a cada paso, sin dar nada por sentado. Bajo su mando está la Niebla Sagrada, una magia antigua y protectora que bendijo las tijeras, las agujas y el hilo de coser de Gwen. Muchas cosas son nuevas para Gwen, pero sigue decidida a luchar con gozo por el bien que prevalece en un mundo roto.", "La Costurera Sagrada", 6300, "Luchador", "Islas de las Sombras");
         Personaje c3 = new Personaje("Hecarim", "Hecarim es una fusión espectral de un hombre y una bestia condenada a llevar las almas de los vivos por toda la eternidad. Cuando las Islas Bendecidas cayeron en oscuridad, este orgulloso caballero fue arrasado por la destructiva energía de la Ruina junto a su caballería y sus monturas. Ahora, cuando la Niebla Negra se esparce por Runaterra, él encabeza la devastadora carga, se deleita en la matanza que causa y aplasta al enemigo bajo sus pezuñas acorazadas.", "La Sombra de la Guerra", 3150, "Luchador", "Islas de las Sombras");
-        c1.agregarItem(new Item("Arcoescudo Inmortal", 3400));
-        c1.agregarItem(new Item("Grebas del Berserker", 1100));
-        c2.agregarItem(new Item("Agrietador",3200));
+       
+       
         c3.agregarItem(new Item("Cercenador Divino",3300));
         
         
-        
+       c1.agregarItem(new Item("Arcoescudo Inmortal", 3400));
+       c1.agregarItem(new Item("Grebas del Berserker", 1100)); 
        c1.agregarHabilidad(0, new Habilidad("Tiro Escarchado","P", 0));
-        c1.agregarHabilidad(1, new Habilidad("Concentración de la Guardabosques","Q", 50));
-        c1.agregarHabilidad(2, new Habilidad("Descarga","W", 75));
-        c1.agregarHabilidad(3, new Habilidad("Tiro de Halcón","E", 0));
-        c1.agregarHabilidad(4, new Habilidad("Flecha de Cristal Encantada","R", 100));
+       c1.agregarHabilidad(1, new Habilidad("Concentración de la Guardabosques","Q", 50));
+       c1.agregarHabilidad(2, new Habilidad("Descarga","W", 75));
+       c1.agregarHabilidad(3, new Habilidad("Tiro de Halcón","E", 0));
+       c1.agregarHabilidad(4, new Habilidad("Flecha de Cristal Encantada","R", 100));
        
+        c2.agregarItem(new Item("Agrietador",3200));
+        c2.agregarItem(new Item("Punteras de Acero Revestidas", 1100));
         
-        
-        
-        
-        
-        /*
-        Habilidad h1 = new Habilidad("Tiro congelador","P", 0);
-        Habilidad h2 = new Habilidad("Concentración absoluta","Q", 30);
-        
-        c1.agregarHabilidad(h1);
-        c1.agregarHabilidad(h2);
-        */
-        
+       c2.agregarHabilidad(0, new Habilidad("Mil Cortes","P", 0));
+       c2.agregarHabilidad(1, new Habilidad("¡A Cortar!","Q", 50));
+       c2.agregarHabilidad(2, new Habilidad("Niebla Sagrada","W", 75));
+       c2.agregarHabilidad(3, new Habilidad("Costura Letal","E", 0));
+       c2.agregarHabilidad(4, new Habilidad("Ráfaga de Agujas","R", 100));
+       
+       c3.agregarHabilidad(0, new Habilidad("Sendero de Guerra","P", 0));
+       c3.agregarHabilidad(1, new Habilidad("Ataque de Furia","Q", 50));
+       c3.agregarHabilidad(2, new Habilidad("Espíritu del Terror","W", 75));
+       c3.agregarHabilidad(3, new Habilidad("Carga Devastadora","E", 0));
+       c3.agregarHabilidad(4, new Habilidad("Avalancha de Sombras","R", 100));
+       
+       
         
         campeonesLista.add(c1);
         campeonesLista.add(c2);
@@ -115,7 +125,7 @@ public class Ventana extends javax.swing.JFrame {
         campeonNombre.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         campeonNombre.setText("Campeón");
         campeonNombre.setBorder(null);
-        campeonNombre.setCaretColor(new java.awt.Color(255, 51, 0));
+        campeonNombre.setCaretColor(new java.awt.Color(0, 0, 0));
 
         campeonSubtitulo.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         campeonSubtitulo.setText("Subtitulo");
@@ -161,6 +171,7 @@ public class Ventana extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("R:");
 
+        pText.setToolTipText("");
         pText.setBorder(null);
 
         qText.setBorder(null);
