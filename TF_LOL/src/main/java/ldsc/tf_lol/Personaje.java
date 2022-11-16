@@ -15,15 +15,15 @@ public class Personaje {
     
     // Constructor
     public Personaje(
-            String nombre, String descripcion, String subtitulo, Tipo tipo,
-            int costo, List<Habilidad> listahabilidad, List<Item> listaItems) {
+            String nombre, String descripcion, String subtitulo,
+            int costo, String clase, String reg) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.subtitulo = subtitulo;
-        this.tipo = tipo;
+        this.tipo = new Tipo(clase, reg);
         this.costo = costo;
         this.listaHabilidades = new ArrayList<>();
-        this.listaItems = listaItems;
+        this.listaItems = new ArrayList<>();
     }
     
     // Getters y Setters
@@ -65,14 +65,31 @@ public class Personaje {
     public List<Habilidad> getListaHabilidades() {
         return listaHabilidades;
     }
-    public void setListaHabilidades(List<Habilidad> listaHabilidades) {
-        this.listaHabilidades = listaHabilidades;
-    }
 
-    public List<Item> getListaItems() {
-        return listaItems;
+    
+    
+    
+    public void agregarHabilidad(int indice,Habilidad skill){
+        
+        listaHabilidades.add(indice, skill);
     }
-    public void setListaItems(List<Item> listaItems) {
-        this.listaItems = listaItems;
+    
+    public void agregarItem(Item objeto){
+        listaItems.add(objeto);
     }
+    
+     public String mostrarHabilidad(int indice){
+         String skill=listaHabilidades.get(indice).toString();
+        return skill;
+    }
+    
+    public String mostrarItems(){
+        String obj=" ";
+        for (Item objeto : listaItems) {
+            obj = obj+(objeto.toString()+" - ");
+        }
+        return obj;
+    }
+    
+   
 }

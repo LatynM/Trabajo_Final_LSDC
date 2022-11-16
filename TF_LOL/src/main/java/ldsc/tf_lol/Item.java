@@ -25,4 +25,11 @@ public class Item {
     public void setCosto(int costo) {
         this.costo = costo;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " - $" + costo;
+    }
+    
+    
 }

@@ -12,6 +12,43 @@ public class Ventana extends javax.swing.JFrame {
     
     public LinkedList<Personaje> funcionCamp() {
         LinkedList<Personaje> campeonesLista = new LinkedList<>();
+        
+        Personaje defaultPersonaje = new Personaje("(Elegir campeón)", " ", " ", 0, " ", " ");
+        campeonesLista.add(defaultPersonaje);
+        
+        Personaje c1 = new Personaje("Ashe", "Como Hija del Hielo y madre de guerra de la tribu Avarosa, Ashe comanda la más grande horda en el norte. Estoica, inteligente e idealista, pero incómoda con su rol de líder, ella aprovecha las magias ancestrales de su linaje para portar un arco de Hielo Puro. Apoyada por la creencia de su gente que ella es el héroe mitológico reencarnado de Avarosa, Ashe espera unificar el Fréljord una vez más al retomar sus tierras antiguas y tribales.", "La Arquera de Hielo", 450, "Tirador", "Freljord");
+        Personaje c2 = new Personaje("Gwen", "Gwen, una antigua muñeca que se transformó y cobró vida a través de la magia, usa las mismas herramientas que en su momento la crearon. Lleva el peso del amor de su creadora a cada paso, sin dar nada por sentado. Bajo su mando está la Niebla Sagrada, una magia antigua y protectora que bendijo las tijeras, las agujas y el hilo de coser de Gwen. Muchas cosas son nuevas para Gwen, pero sigue decidida a luchar con gozo por el bien que prevalece en un mundo roto.", "La Costurera Sagrada", 6300, "Luchador", "Islas de las Sombras");
+        Personaje c3 = new Personaje("Hecarim", "Hecarim es una fusión espectral de un hombre y una bestia condenada a llevar las almas de los vivos por toda la eternidad. Cuando las Islas Bendecidas cayeron en oscuridad, este orgulloso caballero fue arrasado por la destructiva energía de la Ruina junto a su caballería y sus monturas. Ahora, cuando la Niebla Negra se esparce por Runaterra, él encabeza la devastadora carga, se deleita en la matanza que causa y aplasta al enemigo bajo sus pezuñas acorazadas.", "La Sombra de la Guerra", 3150, "Luchador", "Islas de las Sombras");
+        c1.agregarItem(new Item("Arcoescudo Inmortal", 3400));
+        c1.agregarItem(new Item("Grebas del Berserker", 1100));
+        c2.agregarItem(new Item("Agrietador",3200));
+        c3.agregarItem(new Item("Cercenador Divino",3300));
+        
+        
+        
+       c1.agregarHabilidad(0, new Habilidad("Tiro Escarchado","P", 0));
+        c1.agregarHabilidad(1, new Habilidad("Concentración de la Guardabosques","Q", 50));
+        c1.agregarHabilidad(2, new Habilidad("Descarga","W", 75));
+        c1.agregarHabilidad(3, new Habilidad("Tiro de Halcón","E", 0));
+        c1.agregarHabilidad(4, new Habilidad("Flecha de Cristal Encantada","R", 100));
+       
+        
+        
+        
+        
+        
+        /*
+        Habilidad h1 = new Habilidad("Tiro congelador","P", 0);
+        Habilidad h2 = new Habilidad("Concentración absoluta","Q", 30);
+        
+        c1.agregarHabilidad(h1);
+        c1.agregarHabilidad(h2);
+        */
+        
+        
+        campeonesLista.add(c1);
+        campeonesLista.add(c2);
+        campeonesLista.add(c3);
         return campeonesLista;
     }
 
@@ -35,12 +72,15 @@ public class Ventana extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        pText = new javax.swing.JTextField();
+        qText = new javax.swing.JTextField();
+        wText = new javax.swing.JTextField();
+        eText = new javax.swing.JTextField();
+        rText = new javax.swing.JTextField();
         claseIcon = new javax.swing.JLabel();
+        itemsTitulo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        itemsRecomendados = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jTextField6 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -54,7 +94,10 @@ public class Ventana extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setBackground(new java.awt.Color(109, 91, 68));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setForeground(new java.awt.Color(147, 100, 49));
+        jPanel2.setOpaque(false);
 
         lista.setBackground(new java.awt.Color(204, 204, 204));
         lista.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -69,38 +112,38 @@ public class Ventana extends javax.swing.JFrame {
         tituloPrograma.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
         tituloPrograma.setText("Visualizador");
 
-        campeonNombre.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        campeonNombre.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         campeonNombre.setText("Campeón");
         campeonNombre.setBorder(null);
-        campeonNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campeonNombreActionPerformed(evt);
-            }
-        });
+        campeonNombre.setCaretColor(new java.awt.Color(255, 51, 0));
 
-        campeonSubtitulo.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        campeonSubtitulo.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         campeonSubtitulo.setText("Subtitulo");
         campeonSubtitulo.setBorder(null);
-        campeonSubtitulo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campeonSubtituloActionPerformed(evt);
-            }
-        });
 
         campeonDesc.setEditable(false);
         campeonDesc.setColumns(20);
+        campeonDesc.setFont(new java.awt.Font("Dialog", 2, 16)); // NOI18N
+        campeonDesc.setLineWrap(true);
         campeonDesc.setRows(5);
-        campeonDesc.setText("Descripción.\n");
+        campeonDesc.setText("(Descripción)\n");
+        campeonDesc.setWrapStyleWord(true);
         campeonDesc.setBorder(null);
+        campeonDesc.setMargin(new java.awt.Insets(10, 10, 10, 10));
         jScrollPane2.setViewportView(campeonDesc);
 
-        campeonRC.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
+        campeonRC.setFont(new java.awt.Font("Dialog", 3, 17)); // NOI18N
         campeonRC.setText("Clase - Región");
         campeonRC.setBorder(null);
+        campeonRC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campeonRCActionPerformed(evt);
+            }
+        });
 
-        campeonIcon.setText("jLabel1");
+        campeonIcon.setPreferredSize(new java.awt.Dimension(120, 120));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
         jLabel1.setText("Habilidades");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -118,27 +161,32 @@ public class Ventana extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("R:");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.setBorder(null);
+        pText.setBorder(null);
 
-        jTextField2.setText("jTextField2");
-        jTextField2.setBorder(null);
-
-        jTextField3.setText("jTextField3");
-        jTextField3.setBorder(null);
-
-        jTextField4.setText("jTextField4");
-        jTextField4.setBorder(null);
-
-        jTextField5.setText("jTextField5");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        qText.setBorder(null);
+        qText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                qTextActionPerformed(evt);
             }
         });
 
-        claseIcon.setText("jLabel7");
+        wText.setBorder(null);
+
+        eText.setBorder(null);
+
+        rText.setBorder(null);
+
+        claseIcon.setPreferredSize(new java.awt.Dimension(96, 96));
+
+        itemsTitulo.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        itemsTitulo.setText("Items recomendados");
+
+        itemsRecomendados.setColumns(20);
+        itemsRecomendados.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        itemsRecomendados.setLineWrap(true);
+        itemsRecomendados.setRows(5);
+        itemsRecomendados.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(itemsRecomendados);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -147,91 +195,116 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(tituloPrograma))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campeonIcon)
-                            .addComponent(claseIcon))
-                        .addGap(90, 90, 90)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campeonSubtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campeonNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campeonRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField4))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(30, 30, 30)
+                                .addComponent(campeonIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(claseIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(113, 113, 113))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel4)
+                                                        .addComponent(jLabel5))
+                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jLabel6)
+                                                        .addGap(4, 4, 4)))
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(wText)
+                                                    .addComponent(eText)
+                                                    .addComponent(rText)))
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jLabel3)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(qText, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                                    .addComponent(jLabel2)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(pText))
+                                                .addComponent(jLabel1)))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(34, 34, 34)
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(8, 8, 8))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(itemsTitulo)
+                                                .addGap(50, 50, 50))))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campeonSubtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campeonRC, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campeonNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(18, 18, 18)
+                        .addComponent(tituloPrograma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(68, 68, 68))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tituloPrograma)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(campeonNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloPrograma)
+                    .addComponent(lista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(campeonIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addComponent(claseIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(campeonNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(campeonSubtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(campeonRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(campeonIcon)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(claseIcon))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campeonRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(itemsTitulo))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(pText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(qText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(wText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(eText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(rText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -239,11 +312,16 @@ public class Ventana extends javax.swing.JFrame {
         jTextField6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jTextField6.setText("jTextField6");
         jTextField6.setPreferredSize(new java.awt.Dimension(100, 30));
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elegir campeón)", "Ashe", "Gwen", "Hecarim", "Jhin", "Leona", "Lux", "Nocturne", "Pantheon", "Ryze", "Twisted Fate", "Zac" }));
         jComboBox1.setPreferredSize(new java.awt.Dimension(120, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elegir campeón)", "Ashe", "Gwen", "Hecarim", "Jhin", "Leona", "Lux", "Nocturne", "Pantheon", "Ryze", "Twisted Fate", "Zac" }));
         jComboBox2.setPreferredSize(new java.awt.Dimension(120, 30));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -251,7 +329,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,59 +358,96 @@ public class Ventana extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, 1001, 1001, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, 646, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campeonNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campeonNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campeonNombreActionPerformed
-
-    private void campeonSubtituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campeonSubtituloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campeonSubtituloActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void listaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaActionPerformed
         String campeonElegido = lista.getSelectedItem().toString();
         
         for(Personaje champ : funcionCamp()) {
             if(campeonElegido.equals(champ.getNombre())) {
+                campeonNombre.setText(champ.getNombre());
                 campeonDesc.setText(champ.getDescripcion());
-                campeonNombre.setText(champ.getSubtitulo());
-                campeonIcon.setIcon(new ImageIcon("path"));
-            }
+                campeonSubtitulo.setText(champ.getSubtitulo());
+                campeonRC.setText(champ.getTipo().getNombre()+" - "+champ.getTipo().getRegion());
+                String nombreImg=champ.getNombre()+"Square.png";
+                campeonIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\squares\\"+nombreImg));
+                itemsRecomendados.setText(champ.mostrarItems());
                 
+                pText.setText(champ.mostrarHabilidad(0));
+                qText.setText(champ.mostrarHabilidad(1));
+                wText.setText(champ.mostrarHabilidad(2));
+                eText.setText(champ.mostrarHabilidad(3));
+                rText.setText(champ.mostrarHabilidad(4));
+                
+                
+                //cambia el icono de clase según la clase
+                if(champ.getTipo().getNombre().equals("Tirador")){
+                    claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\Tirador.png"));
+                }
+                if(champ.getTipo().getNombre().equals("Tanque")){
+                    claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\Tanque.png"));
+                }
+                if(champ.getTipo().getNombre().equals("Mago")){
+                    claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\Mago.png"));
+                }
+                if(champ.getTipo().getNombre().equals("Luchador")){
+                    claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\Luchador.png"));
+                }
+                 if(champ.getTipo().getNombre().equals("Soporte")){
+                    claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\Soporte.png"));
+                }
+                  if(champ.getTipo().getNombre().equals("Asesino")){
+                    claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\Asesino.png"));
+                }
+                  else{
+                      if(campeonElegido.equals("(Elegir campeón)")){
+                          campeonNombre.setText("Campeón");
+                          campeonSubtitulo.setText("Subtítulo");
+                          campeonDesc.setText("(Descripción)");
+                          campeonRC.setText("Clase - Región");
+                          campeonIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\squares\\champ.png"));
+                          claseIcon.setIcon(new ImageIcon("C:\\Users\\Marcelo\\Desktop\\tarea\\TUP 2022 2 CUATRIMESTRE\\LAB 2\\images\\classes\\def.png"));
+                      }
+                  }
+            }
         }
     }//GEN-LAST:event_listaActionPerformed
+
+    private void campeonRCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campeonRCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campeonRCActionPerformed
+
+    private void qTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qTextActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -342,6 +457,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField campeonRC;
     private javax.swing.JTextField campeonSubtitulo;
     private javax.swing.JLabel claseIcon;
+    private javax.swing.JTextField eText;
+    private javax.swing.JTextArea itemsRecomendados;
+    private javax.swing.JLabel itemsTitulo;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -353,14 +471,14 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JComboBox<String> lista;
+    private javax.swing.JTextField pText;
+    private javax.swing.JTextField qText;
+    private javax.swing.JTextField rText;
     private javax.swing.JLabel tituloPrograma;
+    private javax.swing.JTextField wText;
     // End of variables declaration//GEN-END:variables
 }

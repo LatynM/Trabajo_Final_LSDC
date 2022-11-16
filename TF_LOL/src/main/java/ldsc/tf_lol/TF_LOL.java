@@ -10,7 +10,7 @@ public class TF_LOL {
         window.setVisible(true);
         window.setLocationRelativeTo(null);
         
-        //tamaño de iconos de campeon 115x115
+        
         
         
       
