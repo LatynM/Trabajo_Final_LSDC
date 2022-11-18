@@ -1,4 +1,3 @@
-
 package ldsc.tf_lol;
 
 public class TF_LOL {
@@ -9,11 +8,6 @@ public class TF_LOL {
         
         window.setVisible(true);
         window.setLocationRelativeTo(null);
-        
-        
-        
-        
-      
-        
+                
     }
 }
