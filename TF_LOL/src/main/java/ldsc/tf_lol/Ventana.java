@@ -411,7 +411,7 @@ public class Ventana extends javax.swing.JFrame {
         itemsRecomendados.setEditable(false);
         itemsRecomendados.setBackground(new java.awt.Color(7, 26, 37));
         itemsRecomendados.setColumns(20);
-        itemsRecomendados.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        itemsRecomendados.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
         itemsRecomendados.setForeground(new java.awt.Color(204, 204, 204));
         itemsRecomendados.setLineWrap(true);
         itemsRecomendados.setRows(5);
