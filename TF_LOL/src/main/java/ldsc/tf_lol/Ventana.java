@@ -106,7 +106,7 @@ public class Ventana extends javax.swing.JFrame {
 
         c15.agregarItem(new Item("Garra del Merodeador", 3100));
         c15.agregarItem(new Item("Filo de la Noche", 2900));
-        c12.agregarItem(new Item("Punteras de Acero Revestidas", 1100));
+        c15.agregarItem(new Item("Punteras de Acero Revestidas", 1100));
 
         c16.agregarItem(new Item("Protocinturón Hextech", 3200));
         c16.agregarItem(new Item("Reloj de Arena de Zhonyas", 3000));
@@ -285,6 +285,9 @@ public class Ventana extends javax.swing.JFrame {
         combateText = new javax.swing.JTextField();
         combate1 = new javax.swing.JComboBox<>();
         combate2 = new javax.swing.JComboBox<>();
+        combateTest = new javax.swing.JTextField();
+        combateText2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Visualizador LoL");
@@ -300,7 +303,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(147, 100, 49));
         jPanel2.setOpaque(false);
 
-        lista.setBackground(new java.awt.Color(204, 204, 204));
+        lista.setBackground(new java.awt.Color(102, 102, 102));
         lista.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lista.setForeground(new java.awt.Color(191, 142, 57));
         lista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elegir campeón)", "Ashe", "Bardo", "Fiddlesticks", "Gwen", "Hecarim", "Jhin", "Jinx", "Leona", "Lux", "Nocturne", "Pantheon", "Pyke", "Rek'Sai", "Ryze", "Shen", "Twisted Fate", "Zac" }));
@@ -478,9 +481,10 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(tituloPrograma)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(campeonSubtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campeonNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(campeonSubtitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(campeonNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -532,19 +536,23 @@ public class Ventana extends javax.swing.JFrame {
                                     .addComponent(rTag)
                                     .addComponent(rText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setBackground(new java.awt.Color(7, 26, 37));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(147, 100, 49), 3));
+        jPanel3.setForeground(new java.awt.Color(147, 100, 49));
 
+        combateText.setEditable(false);
         combateText.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        combateText.setPreferredSize(new java.awt.Dimension(100, 30));
         combateText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combateTextActionPerformed(evt);
             }
         });
 
+        combate1.setBackground(new java.awt.Color(102, 102, 102));
+        combate1.setForeground(new java.awt.Color(191, 142, 57));
         combate1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elegir campeón)", "Ashe", "Bardo", "Fiddlesticks", "Gwen", "Hecarim", "Jhin", "Jinx", "Leona", "Lux", "Nocturne", "Pantheon", "Pyke", "Rek'Sai", "Ryze", "Shen", "Twisted Fate", "Zac" }));
         combate1.setPreferredSize(new java.awt.Dimension(120, 30));
         combate1.addActionListener(new java.awt.event.ActionListener() {
@@ -553,6 +561,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        combate2.setBackground(new java.awt.Color(102, 102, 102));
+        combate2.setForeground(new java.awt.Color(191, 142, 57));
         combate2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(Elegir campeón)", "Ashe", "Bardo", "Fiddlesticks", "Gwen", "Hecarim", "Jhin", "Jinx", "Leona", "Lux", "Nocturne", "Pantheon", "Pyke", "Rek'Sai", "Ryze", "Shen", "Twisted Fate", "Zac" }));
         combate2.setPreferredSize(new java.awt.Dimension(120, 30));
         combate2.addActionListener(new java.awt.event.ActionListener() {
@@ -561,28 +571,53 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        combateTest.setEditable(false);
+        combateTest.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        combateTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combateTestActionPerformed(evt);
+            }
+        });
+
+        combateText2.setEditable(false);
+        combateText2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 30)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(191, 142, 57));
+        jLabel1.setText("Combate");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(combate1, 0, 128, Short.MAX_VALUE)
-                    .addComponent(combate2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(combateText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(combate1, 0, 128, Short.MAX_VALUE)
+                        .addComponent(combate2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(combateText)
+                        .addComponent(combateTest)
+                        .addComponent(combateText2)))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel1)
+                .addGap(153, 153, 153)
                 .addComponent(combate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(combateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
+                .addComponent(combateTest, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(combateText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(combate2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -667,95 +702,110 @@ public class Ventana extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_listaActionPerformed
-
+    
     private void combate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combate1ActionPerformed
 
-        /*String campeonElegido1 = combate1.getSelectedItem().toString();
-        
-        
-        String tipo1=null, tipo2=null, nombre1=null, nombre2=null;
-        
-        for(Personaje champ: funcionCamp()){
-            if(campeonElegido1.equals(champ.getNombre())){
-                nombre1= champ.getNombre();
-                tipo1 = champ.getTipo().getNombre();
-            }
-        }
-        
-        if (tipo1.equals("Tirador")) {
-            combateText.setText("T:" + nombre1);
-        } else if (tipo1.equals("Mago")) {
-            combateText.setText("M:" + nombre1);
-        }
-        else {
-            combateText.setText("");
-        }*/
-        
-        /*
         String campeonElegido1 = combate1.getSelectedItem().toString();
-        String campeonElegido2 = combate2.getSelectedItem().toString();
-        String tipo1=null, tipo2=null, nombre1=null, nombre2=null;
+        
+        String tipo1=null, nombre1=null;
+        
         
         for(Personaje champ: funcionCamp()){
             if(campeonElegido1.equals(champ.getNombre())){
-                nombre1= champ.getNombre();
-                tipo1 = champ.getTipo().getNombre();
+                nombre1 = champ.getNombre();
+                tipo1 = champ.getTipo().getNombre();                
             }
         }
-        
-        for(Personaje champ: funcionCamp()){
-            if(campeonElegido2.equals(champ.getNombre())){
-                nombre2 = champ.getNombre();
-                tipo2 = champ.getTipo().getNombre();
-            }
-        }
-        
-        if (tipo1.equals("Asesino") && tipo2.equals("Soporte")) {
-            combateText.setText(nombre1 + " gana");
-        }
-*/
+        combateText.setText(tipo1);
         
     }//GEN-LAST:event_combate1ActionPerformed
 
     private void combate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combate2ActionPerformed
-        /*String campeonElegido1 = combate2.getSelectedItem().toString();
-        
-        
-        String tipo1=null, tipo2=null, nombre1=null, nombre2=null;
-        
-        for(Personaje champ: funcionCamp()){
-            if(campeonElegido1.equals(champ.getNombre())){
-                nombre1= champ.getNombre();
-                tipo1 = champ.getTipo().getNombre();
-            }
-        }*/
-        
-        
-    }//GEN-LAST:event_combate2ActionPerformed
-
-    private void combateTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combateTextActionPerformed
-        /*String campeonElegido1 = combate1.getSelectedItem().toString();
         String campeonElegido2 = combate2.getSelectedItem().toString();
-        String tipo1=null, tipo2=null, nombre1=null, nombre2=null;
         
-        for(Personaje champ: funcionCamp()){
-            if(campeonElegido1.equals(champ.getNombre())){
-                nombre1= champ.getNombre();
-                tipo1 = champ.getTipo().getNombre();
-            }
-        }
+        String tipo2=null, nombre2=null;
         
         for(Personaje champ: funcionCamp()){
             if(campeonElegido2.equals(champ.getNombre())){
-                nombre2 = champ.getNombre();
-                tipo2 = champ.getTipo().getNombre();
+                nombre2= champ.getNombre();
+                tipo2 = champ.getTipo().getNombre();        
             }
         }
+        combateText2.setText(tipo2);
+    }//GEN-LAST:event_combate2ActionPerformed
+
+    private void combateTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combateTextActionPerformed
         
-        if (tipo1.equals("Asesino")) {
-            combateText.setText(nombre1 + " gana");
-        }*/
     }//GEN-LAST:event_combateTextActionPerformed
+
+    private void combateTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combateTestActionPerformed
+        String test = combateText.getText();
+        String test2 = combateText2.getText();
+        
+        if (test.equals("Asesino") && test2.equals("Soporte")) {
+            combateTest.setText("Ganador Asesino");
+        }
+        if (test.equals("Soporte") && test2.equals("Asesino")) {
+            combateTest.setText("Ganador Asesino");
+        }
+        if (test.equals("Asesino") && test2.equals("Tirador")) {
+            combateTest.setText("Ganador Asesino");
+        }
+        if (test.equals("Tirador") && test2.equals("Asesino")) {
+            combateTest.setText("Ganador Asesino");
+        }
+        if (test.equals("Tirador") && test2.equals("Tanque")) {
+            combateTest.setText("Ganador Tirador");
+        }
+        if (test.equals("Tanque") && test2.equals("Tirador")) {
+            combateTest.setText("Ganador Tirador");
+        }
+        if (test.equals("Mago") && test2.equals("Tirador")) {
+            combateTest.setText("Ganador Mago");
+        }
+        if (test.equals("Tirador") && test2.equals("Mago")) {
+            combateTest.setText("Ganador Mago");
+        }
+        if (test.equals("Luchador") && test2.equals("Tirador")) {
+            combateTest.setText("Ganador Luchador");
+        }
+        if (test.equals("Tirador") && test2.equals("Luchador")) {
+            combateTest.setText("Ganador Luchador");
+        }
+        if (test.equals("Mago") && test2.equals("Asesino")) {
+            combateTest.setText("Ganador Asesino");
+        }
+        if (test.equals("Asesino") && test2.equals("Mago")) {
+            combateTest.setText("Ganador Asesino");
+        }
+        if (test.equals("Luchador") && test2.equals("Tanque")) {
+            combateTest.setText("Ganador Luchador");
+        }
+        if (test.equals("Tanque") && test2.equals("Luchador")) {
+            combateTest.setText("Ganador Luchador");
+        }
+        if (test.equals("Asesino") && test2.equals("Asesino")) {
+            combateTest.setText("Habilidad jugador");
+        }
+        if (test.equals("Mago") && test2.equals("Mago")) {
+            combateTest.setText("Habilidad jugador");
+        }
+        if (test.equals("Luchador") && test2.equals("Luchador")) {
+            combateTest.setText("Habilidad jugador");
+        }
+        if (test.equals("Soporte") && test2.equals("Soporte")) {
+            combateTest.setText("Habilidad jugador");
+        }
+        if (test.equals("Tirador") && test2.equals("Tirador")) {
+            combateTest.setText("Habilidad jugador");
+        }
+        if (test.equals("Tanque") && test2.equals("Tanque")) {
+            combateTest.setText("Habilidad jugador");
+        } else {
+            combateTest.setText("");
+        }
+        
+    }//GEN-LAST:event_combateTestActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -767,12 +817,15 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel claseIcon;
     private javax.swing.JComboBox<String> combate1;
     private javax.swing.JComboBox<String> combate2;
+    private javax.swing.JTextField combateTest;
     private javax.swing.JTextField combateText;
+    private javax.swing.JTextField combateText2;
     private javax.swing.JLabel eTag;
     private javax.swing.JTextField eText;
     private javax.swing.JLabel habilidadesTag;
     private javax.swing.JTextArea itemsRecomendados;
     private javax.swing.JLabel itemsTitulo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
